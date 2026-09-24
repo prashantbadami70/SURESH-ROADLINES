@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Suresh Roadlines | Goods Transportation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px 8%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #d1d5db;
+        }
+
+        .powered {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+
+            /* Put your vehicle photo here */
+            background:
+                linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.60)),
+                url("vehicle1.jpg") center/cover no-repeat;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #15803d;
+        }
+
+        .section {
+            padding: 50px 8%;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .vehicles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .vehicle-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,.10);
+        }
+
+        .vehicle-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .vehicle-card h3 {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .booking {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,.12);
+        }
+
+        .booking h2 {
+            margin-bottom: 10px;
+        }
+
+        .booking-intro {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #16a34a;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+        }
+
+        .submit-area {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+
+        .phone {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        footer {
+            background: #030712;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 650px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            .booking {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SURESH ROADLINES</h1>
+    <p>Reliable Goods Transportation Services Across India</p>
+
+    <div class="powered">
+        Powered by Prashant Badami
+    </div>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-content">
+        <h2>Goods Transportation Made Easy</h2>
+
+        <p>
+            Truck • Mini Truck • Part Load • Full Truck Load • Labour Service
+        </p>
+
+        <a href="#booking" class="btn">
+            Request Goods Shipment
+        </a>
+    </div>
+
+</section>
+
+
+<!-- VEHICLES -->
+<section class="section">
+
+    <h2>Our Vehicles</h2>
+
+    <div class="vehicles">
+
+        <div class="vehicle-card">
+            <!-- Replace with your first uploaded vehicle photo -->
+            <img src="vehicle1.jpg" alt="Suresh Roadlines Vehicle">
+            <h3>Goods Truck</h3>
+        </div>
+
+        <div class="vehicle-card">
+            <!-- Replace with your second uploaded vehicle photo -->
+            <img src="vehicle2.jpg" alt="Suresh Roadlines Vehicle">
+            <h3>Mini Truck</h3>
+        </div>
+
+        <div class="vehicle-card">
+            <!-- Replace with your third uploaded vehicle photo -->
+            <img src="vehicle3.jpg" alt="Suresh Roadlines Vehicle">
+            <h3>Transportation Vehicle</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BOOKING FORM -->
+<section class="section" id="booking">
+
+    <div class="booking">
+
+        <h2>Request Goods Shipment</h2>
+
+        <p class="booking-intro">
+            Enter your shipment details. After submitting, WhatsApp will open
+            with all your information ready to send to Siddu Badami.
+        </p>
+
+        <form id="shipmentForm">
+
+            <div class="form-grid">
+
+                <!-- CUSTOMER NAME -->
+                <div class="form-group">
+                    <label for="name">Customer Name *</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required>
+                </div>
+
+
+                <!-- CUSTOMER PHONE -->
+                <div class="form-group">
+                    <label for="phone">Contact Number *</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter mobile number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required>
+                </div>
+
+
+                <!-- FROM CITY -->
+                <div class="form-group">
+                    <label for="fromCity">From City *</label>
+
+                    <input
+                        type="text"
+                        id="fromCity"
+                        list="cities"
+                        placeholder="Pickup city"
+                        required>
+                </div>
+
+
+                <!-- TO CITY -->
+                <div class="form-group">
+                    <label for="toCity">To City *</label>
+
+                    <input
+                        type="text"
+                        id="toCity"
+                        list="cities"
+                        placeholder="Delivery city"
+                        required>
+                </div>
+
+
+                <!-- DATE -->
+                <div class="form-group">
+                    <label for="date">Shipment Date *</label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required>
+                </div>
+
+
+                <!-- GOODS TYPE -->
+                <div class="form-group">
+                    <label for="goods">Type of Goods *</label>
+
+                    <select id="goods" required>
+
+                        <option value="">
+                            Select goods type
+                        </option>
+
+                        <option>Household Goods</option>
+                        <option>Furniture</option>
+                        <option>Machinery</option>
+                        <option>Industrial Goods</option>
+                        <option>Construction Materials</option>
+                        <option>Electronics</option>
+                        <option>Textiles</option>
+                        <option>Agricultural Products</option>
+                        <option>Automobile Parts</option>
+                        <option>Other</option>
+
+                    </select>
+                </div>
+
+
+                <!-- LOAD TYPE -->
+                <div class="form-group full">
+
+                    <label for="loadType">
+                        Transportation / Load Requirement *
+                    </label>
+
+                    <select id="loadType" required>
+
+                        <option value="">
+                            Select requirement
+                        </option>
+
+                        <option>Full Truck Load (FTL)</option>
+
+                        <option>Part Truck Load (PTL)</option>
+
+                        <option>Mini Truck</option>
+
+                        <option>Goods Vehicle</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- LABOUR -->
+                <div class="form-group full">
+
+                    <label>
+                        Labour Service Required?
+                    </label>
+
+                    <div class="checkbox-group">
+
+                        <input
+                            type="checkbox"
+                            id="labour">
+
+                        <span>
+                            Yes, I need loading/unloading labour
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUANTITY / WEIGHT -->
+                <div class="form-group">
+
+                    <label for="quantity">
+                        Approx. Quantity / Weight
+                    </label>
+
+                    <input
+                        type="text"
+                        id="quantity"
+                        placeholder="Example: 2 tons / 20 boxes">
+                </div>
+
+
+                <!-- VEHICLE REQUIREMENT -->
+                <div class="form-group">
+
+                    <label for="vehicle">
+                        Preferred Vehicle
+                    </label>
+
+                    <select id="vehicle">
+
+                        <option value="">
+                            No preference
+                        </option>
+
+                        <option>Mini Truck</option>
+                        <option>Pickup / Goods Vehicle</option>
+                        <option>Medium Truck</option>
+                        <option>Heavy Truck</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ADDITIONAL DETAILS -->
+                <div class="form-group full">
+
+                    <label for="message">
+                        Additional Requirements
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Enter any additional information about your shipment..."></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="submit-area">
+
+                <button
+                    type="submit"
+                    class="btn">
+
+                    Send Shipment Request on WhatsApp
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- CITY LIST -->
+<datalist id="cities">
+
+    <option value="Hubballi">
+    <option value="Dharwad">
+    <option value="Bengaluru">
+    <option value="Mysuru">
+    <option value="Mangaluru">
+    <option value="Belagavi">
+    <option value="Davangere">
+    <option value="Haveri">
+    <option value="Shivamogga">
+    <option value="Ballari">
+    <option value="Tumakuru">
+    <option value="Kolar">
+    <option value="Hassan">
+    <option value="Udupi">
+    <option value="Gadag">
+    <option value="Bagalkot">
+    <option value="Vijayapura">
+    <option value="Raichur">
+    <option value="Kalaburagi">
+    <option value="Bidar">
+    <option value="Pune">
+    <option value="Mumbai">
+    <option value="Hyderabad">
+    <option value="Chennai">
+    <option value="Coimbatore">
+    <option value="Kochi">
+    <option value="New Delhi">
+    <option value="Ahmedabad">
+    <option value="Surat">
+    <option value="Jaipur">
+    <option value="Indore">
+    <option value="Nagpur">
+    <option value="Bhopal">
+    <option value="Kolkata">
+    <option value="Patna">
+
+</datalist>
+
+
+<!-- CONTACT -->
+<section class="section contact">
+
+    <h2>Contact Suresh Roadlines</h2>
+
+    <p>Primary Contact</p>
+
+    <div class="phone">
+        Siddu Badami
+    </div>
+
+    <div class="phone">
+        📞 9880716880
+    </div>
+
+    <p>
+        Service Available All Over India
+    </p>
+
+</section>
+
+
+<footer>
+
+    © 2026 Suresh Roadlines | All Rights Reserved
+
+    <br><br>
+
+    Powered by Prashant Badami
+
+</footer>
+
+
+<script>
+
+    document
+        .getElementById("shipmentForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            // Suresh Roadlines WhatsApp number
+            const whatsappNumber = "919880716880";
+
+
+            // Get form information
+            const name =
+                document.getElementById("name").value;
+
+            const phone =
+                document.getElementById("phone").value;
+
+            const fromCity =
+                document.getElementById("fromCity").value;
+
+            const toCity =
+                document.getElementById("toCity").value;
+
+            const date =
+                document.getElementById("date").value;
+
+            const goods =
+                document.getElementById("goods").value;
+
+            const loadType =
+                document.getElementById("loadType").value;
+
+            const labour =
+                document.getElementById("labour").checked
+                    ? "Yes"
+                    : "No";
+
+            const quantity =
+                document.getElementById("quantity").value
+                || "Not specified";
+
+            const vehicle =
+                document.getElementById("vehicle").value
+                || "No preference";
+
+            const message =
+                document.getElementById("message").value
+                || "None";
+
+
+            // Create WhatsApp message
+            const whatsappMessage =
+
+`🚛 *SURESH ROADLINES - SHIPMENT REQUEST*
+
+👤 *Customer Details*
+Name: ${name}
+Contact: ${phone}
+
+📍 *Shipment Route*
+From: ${fromCity}
+To: ${toCity}
+
+📅 *Shipment Date*
+${date}
+
+📦 *Goods Details*
+Type of Goods: ${goods}
+Quantity / Weight: ${quantity}
+
+🚚 *Transport Requirement*
+Load Type: ${loadType}
+Preferred Vehicle: ${vehicle}
+
+👷 *Labour Service*
+Required: ${labour}
+
+📝 *Additional Requirements*
+${message}
+
+Please provide the transportation quotation and availability.
+
+Thank you.
+Suresh Roadlines`;
+
+
+            // Encode message for WhatsApp
+            const encodedMessage =
+                encodeURIComponent(whatsappMessage);
+
+
+            // Open WhatsApp
+            const whatsappURL =
+                `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        });
+
+</script>
+
+</body>
+</html>
